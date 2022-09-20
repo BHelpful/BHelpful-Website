@@ -3,8 +3,8 @@
   import bhelpfulLogo from '../assets/bhelpful.svg';
   import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
+  import invertocatLogo from '../assets/invertocat.svg';
   // Get invertocat logo
-  const githubIcon = 'https://github.githubassets.com/favicons/favicon-dark.svg';
   const projects = [
     {
       name: 'MealTime',
@@ -183,7 +183,7 @@
         <!-- open or close sourced -->
         {#if project.openSource}
           <a class="github" href={project.github} on:click={e => e.stopPropagation()}>
-            <img src={githubIcon} alt="Github" />
+            <img src={invertocatLogo} alt="Github" />
             <p>Code</p>
           </a>
         {:else}

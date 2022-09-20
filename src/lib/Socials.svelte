@@ -1,10 +1,11 @@
 <script>
+    import invertocatLogo from '../assets/invertocat-white.svg';
     // Get social logos
     const socials = [
         {
             name: 'Github',
             description: 'Looking to contribute?',
-            logo: 'https://github.githubassets.com/favicons/favicon-dark.svg',
+            logo: invertocatLogo,
             url: 'https://github.com/bhelpful',
         },
         {
