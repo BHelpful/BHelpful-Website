@@ -1,6 +1,6 @@
 <script>
     import invertocatLogo from '../assets/invertocat-white.svg';
-    // Get social logos
+    
     const socials = [
         {
             name: 'Github',
@@ -42,11 +42,13 @@
         padding: 1em;
         border-radius: 1em;
         width: 200px;
+        transition: all 0.3s 0s ease-in-out;
     }
 
     .card:hover {
         background-color: #272727;
         cursor: pointer;
+        transition: all 0.3s 0s ease-in-out;
     }
 
     .logo {

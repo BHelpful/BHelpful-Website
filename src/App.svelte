@@ -16,11 +16,13 @@
     line-height: 0.3;
   }
 
-  h1 ~ p {
+  h1 + p {
     font-size: 1.2em;
     line-height: 1.5;
     font-style: italic;
-    margin-bottom: 100px;
+    margin: auto;
+    margin-bottom: 70px;
+    max-width: 450px;
   }
 
   .components {
@@ -31,7 +33,7 @@
 
   #footer {
     color: #ffffff88;
-    margin: 0;
+    margin: 0 auto;
   }
 
   #footer span {
