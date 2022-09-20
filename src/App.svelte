@@ -1,5 +1,5 @@
 <script>
-  import bhelpfulLogo from './assets/bhelpful-logo.png';
+  import bhelpfulLogo from './assets/bhelpful.svg';
   import ProjectList from './lib/ProjectList.svelte';
   import Socials from './lib/Socials.svelte';
 
@@ -31,6 +31,13 @@
 
   #footer {
     color: #ffffff88;
+    margin: 0;
+  }
+
+  #footer span {
+    display: block;
+    color: #ffffff55;
+    font-size: 16px;
   }
 </style>
 
@@ -46,5 +53,7 @@
 
   <p id="footer">
     Copyright BHelpful {currentYear} - All Rights Reserved
+    <span>The Invertocat Logo is a trademark of GitHub, Inc.</span>
+    <span>The in Logo is a trademark of LinkedIn Corporation.</span>
   </p>
 </main>

@@ -1,10 +1,11 @@
 <script>
+    import invertocatLogo from '../assets/invertocat-white.svg';
     // Get social logos
     const socials = [
         {
             name: 'Github',
             description: 'Looking to contribute?',
-            logo: 'https://github.githubassets.com/favicons/favicon-dark.svg',
+            logo: invertocatLogo,
             url: 'https://github.com/bhelpful',
         },
         {
@@ -28,6 +29,8 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        gap: 20px;
+        margin-block: 20px;
     }
 
     .card {
@@ -36,14 +39,14 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        margin: 1em;
         padding: 1em;
         border-radius: 1em;
+        width: 200px;
     }
 
-    .card a {
-        text-decoration: none;
-        color: inherit;
+    .card:hover {
+        background-color: #272727;
+        cursor: pointer;
     }
 
     .logo {
@@ -58,12 +61,10 @@
     <h2>Find us on:</h2>
     <div class="list">
         {#each socials as social}
-            <div class="card">
-                <a href={social.url} target="_blank">
+            <div class="card" on:click="{() => window.open(social.url, '_blank')}">
                 <p>{social.description}</p>
-                    <img src={social.logo} class="logo" alt="Visit" />
-                    <h3>{social.name}</h3>
-                </a>
+                <img src={social.logo} class="logo" alt="Visit" />
+                <h3>{social.name}</h3>
             </div>
         {/each}
     </div>
