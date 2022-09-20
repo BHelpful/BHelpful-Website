@@ -4,7 +4,7 @@
   import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
   import invertocatLogo from '../assets/invertocat.svg';
-  // Get invertocat logo
+  
   const projects = [
     {
       name: 'MealTime',
@@ -37,16 +37,17 @@
       status: 'Planning',
     }
   ];
+
+  document.documentElement.style.setProperty('--projects', `${Object.keys(projects).length}`);
 </script>
 
 <style>
   #projects {
-    width: calc(100vw - 200px);
-    margin: auto;
+    width: calc(100vw - 4rem);
   }
   
   .list {
-    overflow-x: visible;
+    margin: auto;
     display: flex;
     text-align: left;
     flex-direction: row;
@@ -55,14 +56,14 @@
     scroll-snap-type: x mandatory;
     padding: 20px;
     overflow-x: scroll;
-    margin: auto;
-    width: min-content;
-    max-width: 100%;
+    width: auto;
+    max-width: calc(400px * var(--projects));
   }
   
   .card {
     margin: 0 auto;
-    min-width: 250px;
+    width: 280px;
+    min-width: 280px;
     display: grid;
     grid-template-areas: "logo header"
                          "description description"
@@ -82,11 +83,11 @@
 
   @media (max-width: 1200px) { 
     .card:first-child {
-      margin-left: calc(100% / 3);
+      margin-left: calc(100% / var(--projects));
     }
     
     .card:last-child {
-      margin-right: calc(100% / 3);
+      margin-right: calc(100% / var(--projects));
     }
   }
 
