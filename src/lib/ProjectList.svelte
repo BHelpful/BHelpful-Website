@@ -8,7 +8,7 @@
   const projects = [
     {
       name: 'MealTime',
-      description: 'A meal planning app that helps you plan and discover new recipes.',
+      description: 'A meal planning app that helps you plan and discover new recipes.\nBuilt with NestJS and angular.\n(Previously known as MealPlanr)',
       logo: mealtimeLogo,
       url: 'https://mealtime.bhelpful.net',
       github: 'https://github.com/bhelpful/mealtime',
@@ -18,7 +18,7 @@
     },
     {
       name: 'BHelpful Website',
-      description: 'The website you are currently on.',
+      description: 'The website you are currently on. Built with Svelte',
       logo: bhelpfulLogo,
       url: 'https://bhelpful.net',
       github: 'https://github.com/bhelpful/bhelpful-website',
@@ -40,7 +40,6 @@
 </script>
 
 <style>
-
   #projects {
     width: calc(100vw - 200px);
     margin: auto;
@@ -53,9 +52,8 @@
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 40px;
-    padding: 20px;
     scroll-snap-type: x mandatory;
-    padding: 20px 0;
+    padding: 20px;
     overflow-x: scroll;
     margin: auto;
     width: min-content;
@@ -179,7 +177,12 @@
         <p id="status">{project.status}</p>
         <img src={project.logo} class="logo" alt="Visit" />
         <h3 class="header">{project.name}</h3>
-        <p class="description">{project.description}</p>
+        <!-- Make sure that \n is interplolated as line breaks -->
+        <p class="description">
+        {#each project.description.split('\n') as line}
+          {line}<br/>
+        {/each}
+        </p>
         <!-- open or close sourced -->
         {#if project.openSource}
           <a class="github" href={project.github} on:click={e => e.stopPropagation()}>
