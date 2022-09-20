@@ -1,5 +1,5 @@
 <script>
-  import bhelpfulLogo from './assets/bhelpful-logo.png';
+  import bhelpfulLogo from './assets/bhelpful.svg';
   import ProjectList from './lib/ProjectList.svelte';
   import Socials from './lib/Socials.svelte';
 
