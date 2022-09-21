@@ -14,6 +14,7 @@
       github: 'https://github.com/bhelpful/mealtime',
       mainDevs: ['@andreasgdp', '@toeffe3'],
       openSource: true,
+      hacktober: true,
       status: 'InDev',
     },
     {
@@ -24,6 +25,7 @@
       github: 'https://github.com/bhelpful/bhelpful-website',
       mainDevs: ['@toeffe3'],
       openSource: true,
+      hacktober: false,
       status: 'Published',
     },
     {
@@ -34,11 +36,14 @@
       github: undefined,
       mainDevs: ['@BareMaxx', '@alex123a'],
       openSource: false,
+      hacktober: false,
       status: 'Planning',
     }
   ];
 
   document.documentElement.style.setProperty('--projects', `${Object.keys(projects).length}`);
+
+  const isHacktober = () => (new Date()).getMonth() === 9;
 </script>
 
 <style>
@@ -95,6 +100,20 @@
     transform: scale(1.08);
     transition: all .3s 0s ease-in-out;
     cursor: pointer;
+  }
+
+  .card.hacktober {
+    /* Blue purple gradient border */
+    background: linear-gradient(45deg, rgba(1,0,158,1) 0%, rgba(40,40,190,1) 24%, rgba(134,0,255,1) 100%)
+  }
+  .card.hacktober::after {
+    content: 'Open for Hacktoberfest contributions';
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #db6eff;
   }
 
   /* Banner across the top right side */
@@ -174,7 +193,7 @@
   <div class="list">
     {#each projects as project}
       <!-- card should open site when clicked -->
-      <div class="card" on:click={() => window.open(project.url, '_blank')}>
+      <div class="card {project.hacktober && isHacktober() ? 'hacktober' : ''}" on:click={() => window.open(project.url, '_blank')}>
         <p id="status">{project.status}</p>
         <img src={project.logo} class="logo" alt="Visit" />
         <h3 class="header">{project.name}</h3>
