@@ -4,42 +4,26 @@
   import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
   import invertocatLogo from '../assets/invertocat.svg';
-  
-  const projects = [
-    {
-      name: 'MealTime',
-      description: 'A meal planning app that helps you plan and discover new recipes.\nBuilt with NestJS and angular.\n(Previously known as MealPlanr)',
-      logo: mealtimeLogo,
-      url: 'https://mealtime.bhelpful.net',
-      github: 'https://github.com/bhelpful/mealtime',
-      mainDevs: ['@andreasgdp', '@toeffe3'],
-      openSource: true,
-      hacktober: true,
-      status: 'InDev',
-    },
-    {
-      name: 'BHelpful Website',
-      description: 'The website you are currently on. Built with Svelte',
-      logo: bhelpfulLogo,
-      url: 'https://bhelpful.net',
-      github: 'https://github.com/bhelpful/bhelpful-website',
-      mainDevs: ['@toeffe3'],
-      openSource: true,
-      hacktober: false,
-      status: 'Published',
-    },
-    {
-      name: 'Organizer',
-      description: 'An app for IOS and Android that can help you organize and keep count on stuff in your house.',
-      logo: undefinedLogo,
-      url: undefined,
-      github: undefined,
-      mainDevs: ['@BareMaxx', '@alex123a'],
-      openSource: false,
-      hacktober: false,
-      status: 'Planning',
+  import { projects } from '../data/data.json';
+
+  projects.map(project => {
+    switch (project.name) {
+      case 'MealTime':
+        project.logo = mealtimeLogo;
+        break;
+      case 'BHelpful Website':
+        project.logo = bhelpfulLogo;
+        break;
+      case 'Organizer':
+        project.logo = undefinedLogo;
+        break;
+      case 'Closed Source':
+        project.logo = closedSourceLogo;
+        break;
+      default:
+        project.logo = invertocatLogo;
     }
-  ];
+  });
 
   document.documentElement.style.setProperty('--projects', `${Object.keys(projects).length}`);
 
