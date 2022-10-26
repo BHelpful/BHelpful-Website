@@ -1,45 +1,11 @@
 <script>
-  import mealtimeLogo from '../assets/mealtime.svg';
-  import bhelpfulLogo from '../assets/bhelpful.svg';
-  import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
   import invertocatLogo from '../assets/invertocat.svg';
-  
-  const projects = [
-    {
-      name: 'MealTime',
-      description: 'A meal planning app that helps you plan and discover new recipes.\nBuilt with NestJS and angular.\n(Previously known as MealPlanr)',
-      logo: mealtimeLogo,
-      url: 'https://mealtime.bhelpful.net',
-      github: 'https://github.com/bhelpful/mealtime',
-      mainDevs: ['@andreasgdp', '@toeffe3'],
-      openSource: true,
-      hacktober: true,
-      status: 'InDev',
-    },
-    {
-      name: 'BHelpful Website',
-      description: 'The website you are currently on. Built with Svelte',
-      logo: bhelpfulLogo,
-      url: 'https://bhelpful.net',
-      github: 'https://github.com/bhelpful/bhelpful-website',
-      mainDevs: ['@toeffe3'],
-      openSource: true,
-      hacktober: false,
-      status: 'Published',
-    },
-    {
-      name: 'Organizer',
-      description: 'An app for IOS and Android that can help you organize and keep count on stuff in your house.',
-      logo: undefinedLogo,
-      url: undefined,
-      github: undefined,
-      mainDevs: ['@BareMaxx', '@alex123a'],
-      openSource: false,
-      hacktober: false,
-      status: 'Planning',
-    }
-  ];
+  import { projects } from '../data/projects.json';
+
+  projects.map(project => {
+    project.logo = new URL(project.logo, import.meta.url);
+  });
 
   document.documentElement.style.setProperty('--projects', `${Object.keys(projects).length}`);
 
@@ -195,7 +161,7 @@
       <!-- card should open site when clicked -->
       <div class="card {project.hacktober && isHacktober() ? 'hacktober' : ''}" on:click={() => window.open(project.url, '_blank')}>
         <p id="status">{project.status}</p>
-        <img src={project.logo} class="logo" alt="Visit" />
+        <img src={project.logo} class="logo" alt="Logo" />
         <h3 class="header">{project.name}</h3>
         <!-- Make sure that \n is interplolated as line breaks -->
         <p class="description">

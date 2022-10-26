@@ -1,20 +1,9 @@
 <script>
-    import invertocatLogo from '../assets/invertocat-white.svg';
+    import { socials } from '../data/socials.json';
     
-    const socials = [
-        {
-            name: 'Github',
-            description: 'Looking to contribute?',
-            logo: invertocatLogo,
-            url: 'https://github.com/bhelpful',
-        },
-        {
-            name: 'LinkedIn',
-            description: 'Connect with us',
-            logo: 'https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg',
-            url: 'https://linkedin.com/company/bhelpful',
-        },
-    ];
+    socials.map(socials => {
+        socials.logo = new URL(socials.logo, import.meta.url);
+    });
 </script>
 
 <style>
