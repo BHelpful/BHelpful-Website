@@ -1,17 +1,8 @@
 <script>
-    import invertocatLogo from '../assets/invertocat-white.svg';
     import { socials } from '../data/socials.json';
-    socials.map(social => {
-        switch (social.name) {
-            case 'GitHub':
-                social.logo = invertocatLogo;
-                break;
-            case 'LinkedIn':
-                social.logo = "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg";
-                break;
-            default:
-                social.logo = invertocatLogo;
-        }
+    
+    socials.map(socials => {
+        socials.logo = new URL(socials.logo, import.meta.url);
     });
 </script>
 

@@ -11,7 +11,8 @@
         ],
         "openSource": true,
         "hacktober": true,
-        "status": "InDev"
+        "status": "InDev",
+        "logo": "../assets/mealtime.svg"
       },
       {
         "name": "BHelpful Website",
@@ -23,7 +24,8 @@
         ],
         "openSource": true,
         "hacktober": false,
-        "status": "Published"
+        "status": "Published",
+        "logo": "../assets/bhelpful.svg"
       },
       {
         "name": "Organizer",
@@ -34,7 +36,8 @@
         ],
         "openSource": false,
         "hacktober": false,
-        "status": "Planning"
+        "status": "Planning",
+        "logo": "../assets/undefined.svg"
       }
     ]
-  }
+}

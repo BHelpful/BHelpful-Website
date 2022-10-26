@@ -1,28 +1,10 @@
 <script>
-  import mealtimeLogo from '../assets/mealtime.svg';
-  import bhelpfulLogo from '../assets/bhelpful.svg';
-  import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
   import invertocatLogo from '../assets/invertocat.svg';
   import { projects } from '../data/projects.json';
 
   projects.map(project => {
-    switch (project.name) {
-      case 'MealTime':
-        project.logo = mealtimeLogo;
-        break;
-      case 'BHelpful Website':
-        project.logo = bhelpfulLogo;
-        break;
-      case 'Organizer':
-        project.logo = undefinedLogo;
-        break;
-      case 'Closed Source':
-        project.logo = closedSourceLogo;
-        break;
-      default:
-        project.logo = invertocatLogo;
-    }
+    project.logo = new URL(project.logo, import.meta.url);
   });
 
   document.documentElement.style.setProperty('--projects', `${Object.keys(projects).length}`);
@@ -179,7 +161,7 @@
       <!-- card should open site when clicked -->
       <div class="card {project.hacktober && isHacktober() ? 'hacktober' : ''}" on:click={() => window.open(project.url, '_blank')}>
         <p id="status">{project.status}</p>
-        <img src={project.logo} class="logo" alt="Visit" />
+        <img src={project.logo} class="logo" alt="Logo" />
         <h3 class="header">{project.name}</h3>
         <!-- Make sure that \n is interplolated as line breaks -->
         <p class="description">
