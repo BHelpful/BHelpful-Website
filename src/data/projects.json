@@ -36,17 +36,5 @@
         "hacktober": false,
         "status": "Planning"
       }
-    ],
-    "socials": [
-      {
-        "name": "Github",
-        "description": "Looking to contribute?",
-        "url": "https://github.com/bhelpful"
-      },
-      {
-        "name": "LinkedIn",
-        "description": "Connect with us",
-        "url": "https://linkedin.com/company/bhelpful"
-      }
     ]
   }

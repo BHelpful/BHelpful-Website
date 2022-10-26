@@ -1,6 +1,6 @@
 <script>
     import invertocatLogo from '../assets/invertocat-white.svg';
-    import { socials } from '../data/data.json';
+    import { socials } from '../data/socials.json';
     socials.map(social => {
         switch (social.name) {
             case 'GitHub':

@@ -4,7 +4,7 @@
   import undefinedLogo from '../assets/undefined.svg';
   import closedSourceLogo from '../assets/closedSource.svg';
   import invertocatLogo from '../assets/invertocat.svg';
-  import { projects } from '../data/data.json';
+  import { projects } from '../data/projects.json';
 
   projects.map(project => {
     switch (project.name) {
